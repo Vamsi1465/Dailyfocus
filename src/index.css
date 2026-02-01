@@ -1,0 +1,273 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Daily Execution System - Calm, Focused Design System */
+
+@layer base {
+  :root {
+    /* Premium Light Mode - Crisp, clean, sophistication */
+    --background: 210 40% 98%; /* Slightly cool white */
+    --foreground: 222 47% 11%; /* Deep navy/slate */
+
+    /* Glassy Card base */
+    --card: 0 0% 100%;
+    --card-foreground: 222 47% 11%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 222 47% 11%;
+
+    /* Primary - Elegant Indigo/Violet */
+    --primary: 221 83% 53%; /* Vivid Blue-Indigo */
+    --primary-foreground: 210 40% 98%;
+
+    /* Secondary - Subtle Blue-Grey */
+    --secondary: 210 40% 96.1%;
+    --secondary-foreground: 222 47% 11.2%;
+
+    /* Muted */
+    --muted: 210 40% 96.1%;
+    --muted-foreground: 215.4 16.3% 46.9%;
+
+    /* Accent */
+    --accent: 210 40% 96.1%;
+    --accent-foreground: 222 47% 11.2%;
+
+    /* Destructive */
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 214.3 31.8% 91.4%;
+    --input: 214.3 31.8% 91.4%;
+    --ring: 221 83% 53%;
+
+    --radius: 1rem; /* More rounded for premium feel */
+
+    /* Custom Block Colors - More vibrant but sophisticated */
+    --block-morning: 35 100% 65%; /* Golden sunrise */
+    --block-agency: 217 91% 60%; /* Professional Blue */
+    --block-trading: 150 60% 45%; /* Stable Green */
+    --block-break: 262 83% 58%; /* Relaxation Purple */
+    --block-content: 330 80% 60%; /* Creative Pink */
+    --block-meeting: 190 90% 45%; /* Aqua/Teal */
+    --block-sleep: 230 30% 20%; /* Deep Night */
+
+    /* Timer specific */
+    --timer-active: 150 70% 40%;
+    --timer-warning: 35 90% 50%;
+    --timer-urgent: 0 85% 60%;
+
+    /* Alert overlay */
+    --alert-overlay: 222 47% 11%;
+
+    /* Sidebar defaults */
+    --sidebar-background: 0 0% 98%;
+    --sidebar-foreground: 240 5.3% 26.1%;
+    --sidebar-primary: 240 5.9% 10%;
+    --sidebar-primary-foreground: 0 0% 98%;
+    --sidebar-accent: 240 4.8% 95.9%;
+    --sidebar-accent-foreground: 240 5.9% 10%;
+    --sidebar-border: 220 13% 91%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+
+  .dark {
+    /* Premium Dark Mode - Neutral, Matte, sophisticated */
+    --background: 240 10% 3.9%; /* Zinc 950 - Standard Dark */
+    --foreground: 0 0% 98%;
+
+    --card: 240 10% 3.9%;
+    --card-foreground: 0 0% 98%;
+
+    --popover: 240 10% 3.9%;
+    --popover-foreground: 0 0% 98%;
+
+    --primary: 0 0% 98%; /* White primary in dark mode for stark contrast */
+    --primary-foreground: 240 5.9% 10%;
+
+    --secondary: 240 3.7% 15.9%;
+    --secondary-foreground: 0 0% 98%;
+
+    --muted: 240 3.7% 15.9%;
+    --muted-foreground: 240 5% 64.9%;
+
+    --accent: 240 3.7% 15.9%;
+    --accent-foreground: 0 0% 98%;
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 0 0% 98%;
+
+    --border: 240 3.7% 15.9%;
+    --input: 240 3.7% 15.9%;
+    --ring: 240 4.9% 83.9%;
+
+    --secondary: 217.2 32.6% 17.5%;
+    --secondary-foreground: 210 40% 98%;
+
+    --muted: 217.2 32.6% 17.5%;
+    --muted-foreground: 215 20.2% 65.1%;
+
+    --accent: 217.2 32.6% 17.5%;
+    --accent-foreground: 210 40% 98%;
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 217.2 32.6% 17.5%;
+    --input: 217.2 32.6% 17.5%;
+    --ring: 224.3 76.3% 48%;
+
+    /* Timer lights up in dark mode */
+    --timer-active: 150 90% 50%;
+    --timer-warning: 35 100% 60%;
+    --timer-urgent: 0 100% 65%;
+
+    --sidebar-background: 240 5.9% 10%;
+    --sidebar-foreground: 240 4.8% 95.9%;
+    --sidebar-primary: 224.3 76.3% 48%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 240 3.7% 15.9%;
+    --sidebar-accent-foreground: 240 4.8% 95.9%;
+    --sidebar-border: 240 3.7% 15.9%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground antialiased;
+    font-feature-settings: "ss01", "ss02", "cv01";
+  }
+
+  /* Large display typography for timers */
+  .timer-display {
+    @apply font-mono tracking-tight;
+    font-variant-numeric: tabular-nums;
+  }
+}
+
+@layer components {
+  /* Block type indicators */
+  .block-indicator-morning {
+    background-color: hsl(var(--block-morning));
+  }
+  .block-indicator-agency {
+    background-color: hsl(var(--block-agency));
+  }
+  .block-indicator-trading {
+    background-color: hsl(var(--block-trading));
+  }
+  .block-indicator-break {
+    background-color: hsl(var(--block-break));
+  }
+  .block-indicator-content {
+    background-color: hsl(var(--block-content));
+  }
+  .block-indicator-meeting {
+    background-color: hsl(var(--block-meeting));
+  }
+  .block-indicator-sleep {
+    background-color: hsl(var(--block-sleep));
+  }
+
+  /* Timer states */
+  .timer-active {
+    color: hsl(var(--timer-active));
+  }
+  .timer-warning {
+    color: hsl(var(--timer-warning));
+  }
+  .timer-urgent {
+    color: hsl(var(--timer-urgent));
+  }
+
+  /* Alert overlay */
+  .alert-overlay {
+    background-color: hsl(var(--alert-overlay) / 0.95);
+  }
+
+  /* Locked block styling */
+  .block-locked {
+    @apply opacity-50 pointer-events-none select-none;
+  }
+
+  /* Active block glow */
+  .active-block-glow {
+    box-shadow:
+      0 0 0 2px hsl(var(--primary) / 0.15),
+      0 4px 20px -4px hsl(var(--primary) / 0.25);
+  }
+
+  /* Smooth pulse animation for active timer */
+  .timer-pulse {
+    animation: timerPulse 2s ease-in-out infinite;
+  }
+
+  @keyframes timerPulse {
+    0%, 100% {
+      opacity: 1;
+    }
+    50% {
+      opacity: 0.8;
+    }
+  }
+
+  /* Alert entrance animation */
+  .alert-enter {
+    animation: alertEnter 0.3s ease-out forwards;
+  }
+
+  @keyframes alertEnter {
+    from {
+      opacity: 0;
+      transform: scale(0.95) translateY(10px);
+    }
+    to {
+      opacity: 1;
+      transform: scale(1) translateY(0);
+    }
+  }
+
+  /* Subtle card hover */
+  .card-hover {
+    @apply transition-all duration-300 ease-out;
+  }
+  .card-hover:hover {
+    @apply shadow-xl shadow-black/5;
+    transform: translateY(-2px);
+  }
+
+  /* Glassmorphism utilities */
+  .glass {
+    @apply bg-white/70 dark:bg-black/40 backdrop-blur-xl border border-white/20 dark:border-white/10 shadow-lg;
+  }
+  
+  .glass-card {
+    @apply bg-card/50 backdrop-blur-md border-border/50;
+  }
+}
+
+@layer utilities {
+  /* Scrollbar styling */
+  .scrollbar-thin {
+    scrollbar-width: thin;
+    scrollbar-color: hsl(var(--border)) transparent;
+  }
+
+  .scrollbar-thin::-webkit-scrollbar {
+    width: 6px;
+  }
+
+  .scrollbar-thin::-webkit-scrollbar-track {
+    background: transparent;
+  }
+
+  .scrollbar-thin::-webkit-scrollbar-thumb {
+    background-color: hsl(var(--border));
+    border-radius: 3px;
+  }
+}
