@@ -254,7 +254,10 @@ export function useAlerts(
       const timeStr = formatTime(currentBlock.startHour, currentBlock.startMinute);
       const message = `It's ${timeStr}. Start ${currentBlock.name} now.`;
       
-      playSound();
+      // Skip alarm for sleep blocks
+      if (currentBlock.type?.toLowerCase() !== 'sleep') {
+        playSound();
+      }
       showNotification('Time Block Started', message);
       
       setAlert({
@@ -282,7 +285,10 @@ export function useAlerts(
       if (currentMinutes === endMinutes && now.getSeconds() === 0) {
         const message = `${currentBlock.name} is complete. Next: ${nextBlock?.name || 'None'}`;
         
-        playSound();
+        // Skip alarm for sleep blocks
+        if (currentBlock.type?.toLowerCase() !== 'sleep') {
+          playSound();
+        }
         showNotification('Block Complete', message);
       }
     };
