@@ -6,7 +6,8 @@ import {
   Target, 
   Settings, 
   LogOut,
-  TrendingUp
+  TrendingUp,
+  User
 } from 'lucide-react';
 import { Button } from './ui/button';
 
@@ -47,7 +48,10 @@ export function Sidebar({ className }: SidebarProps) {
   return (
     <div className={cn("pb-12 min-h-screen w-64 bg-card border-r border-border flex flex-col", className)}>
       <div className="space-y-4 py-8">
-        <div className="px-6 py-2">
+        <div className="px-6 py-2 flex flex-col items-center">
+          <div className="w-16 h-16 rounded-full bg-gradient-to-br from-primary to-purple-400 flex items-center justify-center mb-4">
+            <User className="w-8 h-8 text-white" />
+          </div>
           <h2 className="text-2xl font-bold tracking-tight bg-clip-text text-transparent bg-gradient-to-r from-primary to-purple-400">
             FocusFlow
           </h2>

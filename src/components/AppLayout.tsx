@@ -1,6 +1,6 @@
 import { ReactNode } from 'react';
 import { Sidebar } from './Sidebar';
-import { Menu } from 'lucide-react';
+import { Menu, User } from 'lucide-react';
 import { Button } from './ui/button';
 import { Sheet, SheetContent, SheetTrigger } from './ui/sheet';
 
@@ -33,8 +33,8 @@ export function AppLayout({ children }: AppLayoutProps) {
              </Sheet>
 
              <div className="flex items-center gap-2">
-                <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-primary to-purple-400 flex items-center justify-center">
-                    <span className="text-white font-bold text-xs">FF</span>
+                <div className="w-8 h-8 rounded-full bg-gradient-to-br from-primary to-purple-400 flex items-center justify-center">
+                    <User className="w-5 h-5 text-white" />
                 </div>
                 <span className="font-bold tracking-tight">FocusFlow</span>
              </div>
